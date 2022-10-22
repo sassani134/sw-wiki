@@ -55,6 +55,12 @@ function App() {
   return (
   <div className="App">
     <Header />
+    <div className="container flex flex-row">
+      <div className="flex flex-col">
+        {oneCharacter && <Character {...oneCharacter} />}
+      </div>
+
+      <div className="flex flex-col">
     <input
         type="search"
         value={name}
@@ -79,8 +85,9 @@ function App() {
         <h1>Pas de resultat</h1>
       )}
     </div>
-    {oneCharacter && <Character {...oneCharacter} />}
     </div>
+    </div>
+  </div>
   );
 }
 
