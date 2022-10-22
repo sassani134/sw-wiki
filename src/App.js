@@ -1,6 +1,7 @@
 import logo from './logo.svg';
 import './App.css';
 import Header from './Header';
+import Character from './Character';
 import { useState, useEffect } from 'react';
 import axios from 'axios';
 //import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
@@ -59,22 +60,26 @@ function App() {
         value={name}
         onChange={filter}
         className="input"
-        placeholder="Filter"
+        placeholder="Recherche"
       />
 
     <div className="user-list">
       {foundCharacters && foundCharacters.length > 0 ? (
         foundCharacters.map((user) => (
           <li key={user.id} className="user">
-            <span className="user-name">{user.name}</span>
+            <button 
+            className="user-name"
+            onClick={() => setOneCharacter(user)}
+            >
+              {user.name}
+            </button>
           </li>
         ))
       ) : (
         <h1>Pas de resultat</h1>
       )}
     </div>
-    
-
+    {oneCharacter && <Character {...oneCharacter} />}
     </div>
   );
 }

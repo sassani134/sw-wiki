@@ -2,6 +2,8 @@ import { useState, useEffect } from 'react';
 import axios from 'axios';
 
 function Header() {
+
+    const IssURL = 'http://open-notify.org/Open-Notify-API/ISS-Location-Now/';
   return (
     <div>
         <div class="relative h-64 m-8 overflow-hidden bg-red-500 rounded-lg">
